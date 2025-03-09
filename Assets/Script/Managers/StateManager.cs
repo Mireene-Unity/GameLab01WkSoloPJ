@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class StateManager : MonoBehaviour
 {
@@ -29,12 +30,41 @@ public class StateManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    [System.Serializable]
+    public class IntEvent : UnityEvent<int, int> { } // < (int powGrade,int spearGrade) > 순서
+    // Inspector에서 설정 가능한 UnityEvent
+    public IntEvent upGradeRefrash;
+
+    public void UpgradeEvent()
+    {
+        if (upGradeRefrash != null)
+        {
+            upGradeRefrash.Invoke(_reloadUpgradeCount, SpearCount);
+        }
+    }
+    public void RegisterListener(UnityAction<int, int> listener)
+    {
+        if (upGradeRefrash == null)
+        {
+            upGradeRefrash = new IntEvent();
+        }
+        upGradeRefrash.AddListener(listener);
+    }
+    public void UnregisterListener(UnityAction<int, int> listener)
+    {
+        if (upGradeRefrash != null)
+        {
+            upGradeRefrash.RemoveListener(listener);
+        }
+
+    }
+
     public bool BuySpear()
     {
         if (UseCoin(spearCoin)) 
         { 
             SpearCount++;
-
+            UpgradeEvent();
             return true;
         }
         return false;
@@ -48,6 +78,7 @@ public class StateManager : MonoBehaviour
         if (UseCoin(powerUpCoin)) 
         { 
             _reloadUpgradeCount++;
+            UpgradeEvent();
             return true;
         }
         return false;
@@ -69,8 +100,10 @@ public class StateManager : MonoBehaviour
     {
         return _reloadUpgradeCount;
     }
-
-    public void CoinPlus()
+    /// <summary>
+    /// 코인 +1
+    /// </summary>
+    public void CoinPlus() 
     {
         if( GameManager.Instance.IsGameOver() != true)
         {

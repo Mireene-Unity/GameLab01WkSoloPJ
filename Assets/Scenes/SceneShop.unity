@@ -1504,6 +1504,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <SpearCount>k__BackingField: 0
   <MyCoin>k__BackingField: 0
+  upGradeRefrash:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1767496188}
+        m_TargetAssemblyTypeName: ShopUiManager, Assembly-CSharp
+        m_MethodName: HandleValueChanged
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1027983117 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7240755903038455589, guid: 15054ae178461c34580bfc7838f4ee99, type: 3}

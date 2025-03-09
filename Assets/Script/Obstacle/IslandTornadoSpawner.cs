@@ -14,7 +14,7 @@ public class IslandTornadoSpawner : MonoBehaviour
     [Header("토네이도")]
     public int spawnTornadoCount = 2;
     [SerializeField] GameObject tornadoPrefab;
-    public float tornadoSpawnInterval = 15f;
+    public float tornadoSpawnInterval;
 
     void Start()
     {
@@ -46,7 +46,7 @@ public class IslandTornadoSpawner : MonoBehaviour
 
             if(attempts < 100)
             {
-                int randomIdx = Random.Range(0, 5);
+                int randomIdx = Random.Range(0, 2);
                 Instantiate(islandPrefabArray[randomIdx], spawnPosition, Quaternion.identity);
             }
         }

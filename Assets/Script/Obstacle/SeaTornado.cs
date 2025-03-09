@@ -6,10 +6,10 @@ public class SeaTornado : Attraction
     [SerializeField] Transform trail;
     [SerializeField] Transform trailPrefab;
 
-    [SerializeField] float angle = 5f;
+    [SerializeField] float angle;
     [SerializeField] float intervalLine = 0.1f;
 
-    [SerializeField] float lifeTime = 5f;
+    [SerializeField] float lifeTime;
 
     private void Update()
     {

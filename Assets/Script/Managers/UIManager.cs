@@ -77,7 +77,6 @@ public class UIManager : MonoBehaviour
     public void UpdateGamePlayingUI()
     {
         startUI.SetActive(false);
-        playUI.SetActive(true);
         shaksfinUI.gameObject.SetActive(true);
     }
 

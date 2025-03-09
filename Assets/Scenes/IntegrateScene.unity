@@ -1180,7 +1180,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1194385408914813499, guid: 1a2fec73076c46c43a04c7f3299d445d, type: 3}
       propertyPath: m_Mass
-      value: 1
+      value: 0.0001
       objectReference: {fileID: 0}
     - target: {fileID: 4264932055155931457, guid: 1a2fec73076c46c43a04c7f3299d445d, type: 3}
       propertyPath: m_Name
@@ -1188,15 +1188,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7261473563046202408, guid: 1a2fec73076c46c43a04c7f3299d445d, type: 3}
       propertyPath: m_Mass
-      value: 1
+      value: 0.0001
       objectReference: {fileID: 0}
     - target: {fileID: 7295718696983063043, guid: 1a2fec73076c46c43a04c7f3299d445d, type: 3}
       propertyPath: m_Mass
-      value: 1
+      value: 0.0001
       objectReference: {fileID: 0}
     - target: {fileID: 8021772588315331420, guid: 1a2fec73076c46c43a04c7f3299d445d, type: 3}
       propertyPath: m_Mass
-      value: 1
+      value: 0.0001
       objectReference: {fileID: 0}
     - target: {fileID: 8081093974106730999, guid: 1a2fec73076c46c43a04c7f3299d445d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1240,11 +1240,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8322352607939496395, guid: 1a2fec73076c46c43a04c7f3299d445d, type: 3}
       propertyPath: maxSpeed
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8322352607939496395, guid: 1a2fec73076c46c43a04c7f3299d445d, type: 3}
       propertyPath: moveForce
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8322352607939496395, guid: 1a2fec73076c46c43a04c7f3299d445d, type: 3}
       propertyPath: turnSpeed
@@ -1256,7 +1256,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8788230553014986026, guid: 1a2fec73076c46c43a04c7f3299d445d, type: 3}
       propertyPath: m_Mass
-      value: 1
+      value: 0.0001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1489,8 +1489,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 820ed96b85f854b44b3cf49b9fa91a10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2.5
-  windPower: 2
+  speed: 2.2
+  windPower: 1
   windResetTime: 15
 --- !u!4 &666989494
 Transform:
@@ -1816,6 +1816,7 @@ MonoBehaviour:
   gameTime: {fileID: 0}
   bossUI: {fileID: 0}
   shaksfinUI: {fileID: 0}
+  goShopUI: {fileID: 0}
   testNum: 1
 --- !u!1 &934824793
 GameObject:
@@ -2075,8 +2076,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c495c56b12a545649bd2ef0dc5aa331a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnIslandCount: 3
-  minDistance: 0.5
+  spawnIslandCount: 5
+  minDistance: 2
   screenArea: {x: 0, y: 0}
   areaCollider: {fileID: 600620124}
   islandPrefabArray:
@@ -2087,7 +2088,7 @@ MonoBehaviour:
   - {fileID: 8480138585967245939, guid: d62ad5da20d0ab74baeb32adc40ae4ef, type: 3}
   spawnTornadoCount: 2
   tornadoPrefab: {fileID: 2241344920595703642, guid: 0bc32da812893fd47945703f372e0fce, type: 3}
-  tornadoSpawnInterval: 15
+  tornadoSpawnInterval: 12
 --- !u!4 &968767479
 Transform:
   m_ObjectHideFlags: 0
@@ -2990,6 +2991,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <SpearCount>k__BackingField: 0
   <MyCoin>k__BackingField: 0
+  upGradeRefrash:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: f4ec739568ec05d48932de6afde1413a, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1847807619
 Transform:
   m_ObjectHideFlags: 0

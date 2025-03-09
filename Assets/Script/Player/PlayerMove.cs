@@ -60,7 +60,6 @@ public class PlayerMove : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        StartCoroutine(WindStartCoroutine());
     }
 
     void Update()
@@ -69,8 +68,10 @@ public class PlayerMove : MonoBehaviour
         turnInput = Input.GetAxis("Horizontal"); // A(-1) / D(1)
         transform.Translate(windDiration * Time.deltaTime , Space.World); // 바람 방향으로 힘 작용
     }
-
-
+    private void OnEnable()
+    {
+        StartCoroutine(WindStartCoroutine());
+    }
     void FixedUpdate()
     {
         if (turnInput != 0)
@@ -105,10 +106,11 @@ public class PlayerMove : MonoBehaviour
     }
     IEnumerator WindStartCoroutine() // 바람에 밀림 ,상점 제외
     {
+        yield return new WaitForSeconds(0.5f);
         windDiration = GameManager.Instance.WindDiraction();
         windResetTime = GameManager.Instance.WindResetTime();
         if (windDiration.x == 0 && windDiration.y == 0  && windDiration.z == 0) { yield break; }
-        yield return new WaitForSeconds(windResetTime); 
+        yield return new WaitForSeconds(windResetTime - 0.5f); 
 
         StartCoroutine(WindStartCoroutine());
     }
