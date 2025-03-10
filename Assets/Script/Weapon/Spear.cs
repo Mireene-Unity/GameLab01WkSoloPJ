@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
@@ -11,12 +12,14 @@ public class Spear : MonoBehaviour
 
     public float acceleration = 2f; // ���ӵ�
     private float currentSpeed = 0f; // ���� �ӵ�
+    private bool isFishingSuccess = false;
 
     private Vector3 originalScale; // ���� ũ��
     private bool isMoving = false;
     private bool isReturn = false;
     private float reloadingTime;
     private Bbb10311031_PlayerAttack _playerAttack;
+    private CatchList catchListComponent;
 
 
     GameObject enemy;
@@ -29,6 +32,7 @@ public class Spear : MonoBehaviour
     {
         playerObj = GameObject.FindGameObjectWithTag("Player");
         _playerAttack = playerObj.GetComponent<Bbb10311031_PlayerAttack>();
+        catchListComponent = playerObj.GetComponent<CatchList>();
     }
 
     void Start()
@@ -90,6 +94,10 @@ public class Spear : MonoBehaviour
             if (Vector3.Distance(transform.position, playerObj.transform.position) < 0.1f)
             {
                 _playerAttack.AttackCountUp();
+                if (isFishingSuccess) 
+                {
+                   // catchListComponent.//
+                }
                 Destroy(gameObject);
             }
         }
@@ -102,6 +110,7 @@ public class Spear : MonoBehaviour
             StateManager.Instance.CoinPlus();
             Destroy(other.gameObject);
             ReturnStart();
+            isFishingSuccess = true;
 
             // (�ӽ�)
             if (other.GetComponent<KrakenMove>() != null)

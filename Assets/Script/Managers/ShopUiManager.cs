@@ -48,6 +48,10 @@ public class ShopUiManager : MonoBehaviour
         //SceneManager.LoadScene(0);
         GameManager.Instance.GoInGameScene();
     }
+    public void GoFishing()
+    {
+        GameManager.Instance.GoInFishingScene();
+    }
 
     public void UpdatePurchase()
     {

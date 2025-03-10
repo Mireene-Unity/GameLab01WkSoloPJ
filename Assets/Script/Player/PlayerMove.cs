@@ -110,7 +110,7 @@ public class PlayerMove : MonoBehaviour
         windDiration = GameManager.Instance.WindDiraction();
         windResetTime = GameManager.Instance.WindResetTime();
         if (windDiration.x == 0 && windDiration.y == 0  && windDiration.z == 0) { yield break; }
-        yield return new WaitForSeconds(windResetTime - 0.5f); 
+        yield return new WaitForSeconds(windResetTime - 14.5f); 
 
         StartCoroutine(WindStartCoroutine());
     }

@@ -1,13 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro.Examples;
 using UnityEngine;
 
 public class Bbb10311031_PlayerAttack : MonoBehaviour
 {
     public GameObject bullet;
     private int maxAttackCount = 1;
-    public int attackCount;
+    public int attackCount;  
+    private int spearCount = 5;
     void Start() 
     {
         maxAttackCount += StateManager.Instance.SpearCount;
@@ -20,7 +18,8 @@ public class Bbb10311031_PlayerAttack : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && attackCount > 0)
         {
             AttackCountDown();
-            GameObject bulletObj = Instantiate(bullet, transform.position,Quaternion.Euler(transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition)));
+            GameObject bulletObj = Instantiate(bullet, transform.position
+                                              ,Quaternion.Euler(transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition)));
             bulletObj.GetComponent<Spear>().targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
     }

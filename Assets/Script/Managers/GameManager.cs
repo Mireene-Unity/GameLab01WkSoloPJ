@@ -141,6 +141,11 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(0);
         GameStart();
     }
+    public void GoInFishingScene()
+    {
+        SceneManager.LoadScene(2);
+    }
+
 
     // 상점 씬으로 넘어감
     public void GoShopScene()

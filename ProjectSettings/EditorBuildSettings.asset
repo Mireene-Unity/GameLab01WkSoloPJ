@@ -11,5 +11,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SceneShop.unity
     guid: 18bf05f0bba71dc479d586701310d029
+  - enabled: 1
+    path: Assets/Scenes/SceneFishing.unity
+    guid: 4eab69343e376f24d94bb9f4d765ca23
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
